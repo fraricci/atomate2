@@ -51,7 +51,7 @@ class FerroelectricMaker(Maker):
 
     name: str = "ferroelectric"
     nimages: int = 9
-    relax_maker: BaseVaspMaker | None | tuple = field(
+    relax_maker: BaseVaspMaker | tuple | None = field(
         default_factory=lambda: DoubleRelaxMaker.from_relax_maker(RelaxMaker())
     )
     lcalcpol_maker: BaseVaspMaker = field(default_factory=PolarizationMaker)
